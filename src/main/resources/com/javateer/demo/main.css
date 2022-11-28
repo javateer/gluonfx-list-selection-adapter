@@ -1,0 +1,26 @@
+#tabHBox .label {
+    -fx-min-height: 50;
+    -fx-font-size: 13.5;
+}
+
+#defaultTab, #adaptedTab {
+    -fx-border-width: 0 0 2 0;
+}
+
+#defaultTabLabel,
+#adaptedTabLabel {
+    -fx-font-weight: bolder;
+}
+
+.active-tab {
+    -fx-border-color: -primary-swatch-500;
+}
+
+.active-tab > .label {
+     -fx-text-fill: -primary-swatch-500;
+}
+
+/* highlighted color of a selected list item */
+.list-view .list-cell:selected {
+    -fx-background-color: #FFF59D;
+}
