@@ -137,13 +137,13 @@ public class MainPresenter {
                 defaultListSelectedIndices.remove(selectedIndex);
                 selectionModel.clearSelection(selectedIndex);
                 System.out.println("Default List Item Deselected: " + defaultListView.getItems().get(selectedIndex));
-                System.out.println("Total Default List Items Deselected: " + defaultListSelectedIndices.size());
+                System.out.println("Total Default List Items Currently Selected: " + defaultListSelectedIndices.size());
                 System.out.println();
             }
             else {
                 defaultListSelectedIndices.add(selectedIndex);
                 System.out.println("Default List Item Selected: " + defaultListView.getItems().get(selectedIndex));
-                System.out.println("Total Default List Items Selected: " + defaultListSelectedIndices.size());
+                System.out.println("Total Default List Items Currently Selected: " + defaultListSelectedIndices.size());
                 System.out.println();
             }
 
@@ -167,19 +167,17 @@ public class MainPresenter {
 
         /*
          * This block of code is to configure the Gluon-bug workaround GluonListViewselectionAdapter for a ListView.
-         * The goal here is to capture a click event on a ListView item, in which case we forward the user to the
-         * SpillDetailPresenter view.
          */
         Function<IconListCell, MaterialDesignIcon> listItemMapper = ((iconListCell) -> iconListCell.getIcon());
         ObservableList<Integer> selectedIndicies = FXCollections.observableArrayList();
         Consumer<MaterialDesignIcon> listItemSelected = ((materialDesignIcon) -> {
             System.out.println("Adapted List Item Selected: " + materialDesignIcon.toString());
-            System.out.println("Total Adapted List Items Selected: " + selectedIndicies.size());
+            System.out.println("Total Adapted List Items Currently Selected: " + selectedIndicies.size());
             System.out.println();
         });
         Consumer<MaterialDesignIcon> listItemDeselected = ((materialDesignIcon) -> {
             System.out.println("Adapted List Item Deselected: " + materialDesignIcon.toString());
-            System.out.println("Total Adapted List Items Deselected: " + selectedIndicies.size());
+            System.out.println("Total Adapted List Items Currently Selected: " + selectedIndicies.size());
             System.out.println();
         });
         new GluonListViewSelectionAdapter<IconListCell, MaterialDesignIcon>(
